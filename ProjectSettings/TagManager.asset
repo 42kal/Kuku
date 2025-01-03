@@ -3,8 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
+<<<<<<< HEAD
+  tags: []
+=======
   tags:
   - TutorialRequirement
+>>>>>>> db95f7080e8f64891c6106d03d0884e4eef66205
   layers:
   - Default
   - TransparentFX
@@ -44,6 +48,8 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
+<<<<<<< HEAD
+=======
   - Light Layer 1
   - Light Layer 2
   - Light Layer 3
@@ -51,3 +57,4 @@ TagManager:
   - Light Layer 5
   - Light Layer 6
   - Light Layer 7
+>>>>>>> db95f7080e8f64891c6106d03d0884e4eef66205

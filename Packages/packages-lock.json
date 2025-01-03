@@ -1,5 +1,7 @@
 {
   "dependencies": {
+<<<<<<< HEAD
+=======
     "com.unity.2d.animation": {
       "version": "10.1.4",
       "depth": 1,
@@ -111,6 +113,7 @@
       },
       "url": "https://packages.unity.com"
     },
+>>>>>>> db95f7080e8f64891c6106d03d0884e4eef66205
     "com.unity.collab-proxy": {
       "version": "2.6.0",
       "depth": 0,
@@ -118,6 +121,8 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
+=======
     "com.unity.collections": {
       "version": "2.5.1",
       "depth": 2,
@@ -217,6 +222,7 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+>>>>>>> db95f7080e8f64891c6106d03d0884e4eef66205
     "com.unity.multiplayer.center": {
       "version": "1.0.0",
       "depth": 0,
@@ -225,6 +231,8 @@
         "com.unity.modules.uielements": "1.0.0"
       }
     },
+<<<<<<< HEAD
+=======
     "com.unity.nuget.mono-cecil": {
       "version": "1.11.4",
       "depth": 3,
@@ -377,6 +385,7 @@
       },
       "url": "https://packages.unity.com"
     },
+>>>>>>> db95f7080e8f64891c6106d03d0884e4eef66205
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,
