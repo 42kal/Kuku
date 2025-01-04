@@ -10,7 +10,8 @@ public class AdvancedMovement : MonoBehaviour
     public float _currentVerticalSpeed;    // Current vertical speed
     public float _fallSpeed = 10f;         // Default fall speed
     public float _fallClamp = -30f;        // Maximum fall speed limit (fall clamp)
-    public float _jumpHeight = 16f;        // Jump height
+    public float _jumpHeight = 16f;        // Default jump height
+    public float _maxJumpTime = 0.5f;      // Maximum time the jump can be charged
 
     // Ground detection
     public bool _isGrounded;               // Flag to check if the player is grounded
@@ -28,6 +29,7 @@ public class AdvancedMovement : MonoBehaviour
 
     // Store jump input to process it in Update
     private bool _jumpInput;
+    private float _jumpHoldTime;            // Time for which the jump button is held
 
     void Start()
     {
@@ -40,10 +42,17 @@ public class AdvancedMovement : MonoBehaviour
         // Capture jump input in Update()
         _jumpInput = Input.GetButtonDown("Jump");
 
-        // Handle jumping if the player is grounded or in coyote time
         if (_jumpInput && (_isGrounded || _timeLeftGrounded + _coyoteTimeThreshold > Time.time))
         {
+            // Reset the jump hold time when the jump button is pressed
+            _jumpHoldTime = 0f;
             StartJump();
+        }
+
+        if (Input.GetButton("Jump") && _isGrounded)
+        {
+            // Increase the jump hold time while the button is being held
+            _jumpHoldTime = Mathf.Min(_jumpHoldTime + Time.deltaTime, _maxJumpTime);
         }
     }
 
@@ -97,8 +106,8 @@ public class AdvancedMovement : MonoBehaviour
 
     void StartJump()
     {
-        // Start jumping if the player is grounded or within the coyote time window
-        _currentVerticalSpeed = _jumpHeight;  // Apply the jump force
+        // Start jumping with a strength that scales with how long the jump button is held
+        _currentVerticalSpeed = _jumpHeight + (_jumpHoldTime * 5f);  // Adjust the jump strength based on hold time
         _lastJumpPressed = Time.time;         // Store the time the jump button was pressed
     }
 
